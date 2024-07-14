@@ -1,0 +1,12 @@
+﻿@model List<CategoryWithPostCountViewModel>
+<div class="mb-4">
+    <h3>Kategoriler</h3>
+    <ul class="list-unstyled">
+        @foreach (var item in Model)
+        {
+            <li><a href="#" class="text-decoration-none text-dark">@item.CategoryName <span class="badge bg-secondary">@item.PostCount</span></a></li>
+        }
+        
+        
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+﻿<nav aria-label="Sayfa Navigasyonu">
+    <ul class="pagination justify-content-center">
+        @for (int i = 1; i <= ViewBag.PostCount; i++)
+        {
+            <li class="page-item"><a class="page-link text-decoration-none" asp-controller="Home" asp-action="Index" asp-route-page="@i" >@i</a></li>
+        }
+    </ul>
+</nav>
