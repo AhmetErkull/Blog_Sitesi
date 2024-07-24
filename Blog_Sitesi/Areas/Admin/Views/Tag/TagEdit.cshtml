@@ -1,0 +1,27 @@
+﻿@model Tag
+
+<div class="container">
+    <div class="col-md-9 offset-md-1">
+        <form asp-action="TagEdit">
+            <input type="hidden" asp-for="TagId" />
+            <div class="form-group">
+                <label asp-for="TagName" class="control-label"></label>
+                <input asp-for="TagName" class="form-control" />
+                <span asp-validation-for="TagName" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <a asp-action="TagList">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

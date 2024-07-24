@@ -18,9 +18,10 @@
 
                     <div class="col-lg-4">
 
+
                         <div class="mb-4">
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Aramak istediğiniz kelimeyi yazın." aria-label="Arama">
+                            <form class="d-flex" asp-action="PostsBySearch" asp-controller="Home" method="get">
+                                <input class="form-control me-2" name="query" type="search" placeholder="Aramak istediğiniz kelimeyi yazın." aria-label="Arama">
                                 <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                             </form>
                         </div>

@@ -1,0 +1,78 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<Post>
+
+<div class="table-responsive" style="margin-bottom: 20px;">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Category</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">Image Urls</th>
+                <th scope="col">Tags</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Content</td>
+                    <td>@item.Category.Name</td>
+                    <td>@item.CreatedAt</td>
+                    <td>
+                        @{
+                            int imageCount = item.Images.Count;
+                            int currentIndex = 0;
+                        }
+
+                        @foreach (var image in item.Images)
+                        {
+                            <p>@image.Url</p>
+                            currentIndex++;
+                            if (currentIndex < imageCount)
+                            {
+                                <hr />
+                            }
+                        }
+                    </td>
+
+                    <td>
+                        @{
+                            int tagCount = item.Tags.Count;
+                            currentIndex = 0;
+                        }
+                    @foreach (var tag in item.Tags)
+                    {
+                            <p> @tag.Tag.TagName</p>
+                            currentIndex++;
+                            if (currentIndex < tagCount)
+                            {
+                                <hr />
+                            }
+
+
+                        }
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Actions">
+                            <a class="btn btn-outline-primary" asp-action="PostEdit" asp-route-id="@item.PostId">Edit</a>
+                            <a class="btn btn-outline-danger" asp-action="PostDelete" asp-route-id="@item.PostId">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            @Html.PagedListPager((IPagedList)Model, _page => Url.Action("PostList", "Post", new { area = "Admin", page = _page }))
+        </div>
+        <div>
+            <a class="btn btn-outline-success" asp-action="PostCreate">Create New</a>
+        </div>
+    </div>
+</div>

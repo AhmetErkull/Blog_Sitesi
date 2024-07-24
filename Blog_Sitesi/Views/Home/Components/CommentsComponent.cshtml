@@ -1,0 +1,19 @@
+﻿@model List<Comment>
+
+<div class="comments-section pt-5">
+    <h3 class="mb-4">@Model.Count() Yorum</h3>
+    <ul class="list-unstyled">
+        @foreach (Comment comment in Model)
+        {
+            <li class="media mb-4">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">@comment.User.Name</h5>
+                    <small class="text-muted">@comment.CreatedAt.ToShortDateString()</small>
+                    <p>@comment.Content</p>
+                </div>
+            </li>
+        }
+       
+
+    </ul>
+</div>

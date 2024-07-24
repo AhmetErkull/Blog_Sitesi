@@ -168,7 +168,7 @@ namespace Blog_Sitesi.Migrations
                         {
                             CommentId = 1,
                             Content = "çok güzeldi teşekkürler",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(1688),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 127, DateTimeKind.Local).AddTicks(7345),
                             PostId = 1,
                             UserId = 2
                         },
@@ -176,7 +176,7 @@ namespace Blog_Sitesi.Migrations
                         {
                             CommentId = 2,
                             Content = "dostum naber",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(1702),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 127, DateTimeKind.Local).AddTicks(7356),
                             PostId = 1,
                             UserId = 2
                         },
@@ -184,7 +184,7 @@ namespace Blog_Sitesi.Migrations
                         {
                             CommentId = 3,
                             Content = "vay canına",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(1704),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 127, DateTimeKind.Local).AddTicks(7358),
                             PostId = 1,
                             UserId = 3
                         },
@@ -192,7 +192,7 @@ namespace Blog_Sitesi.Migrations
                         {
                             CommentId = 4,
                             Content = "çok bilgilendiriciydi",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(1705),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 127, DateTimeKind.Local).AddTicks(7359),
                             PostId = 2,
                             UserId = 2
                         });
@@ -371,6 +371,8 @@ namespace Blog_Sitesi.Migrations
 
                     b.HasKey("PostId");
 
+                    b.HasAlternateKey("Title");
+
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("UserId");
@@ -383,7 +385,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 1,
                             CategoryId = 1,
                             Content = "bir şeyler bir şeyler",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8390),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4168),
                             Title = "başlık1",
                             UserId = 3,
                             ViewCount = 0
@@ -393,7 +395,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 2,
                             CategoryId = 2,
                             Content = "burada şunu anlatıyoruz",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8466),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4174),
                             Title = "başlık2",
                             UserId = 2,
                             ViewCount = 0
@@ -403,7 +405,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 3,
                             CategoryId = 1,
                             Content = "bu da böyle bir post",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8468),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4176),
                             Title = "başlık3",
                             UserId = 1,
                             ViewCount = 0
@@ -413,7 +415,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 4,
                             CategoryId = 3,
                             Content = "Yeni teknoloji trendleri üzerine düşüncelerimiz.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8470),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4178),
                             Title = "Teknoloji Trendleri",
                             UserId = 2,
                             ViewCount = 0
@@ -423,7 +425,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 5,
                             CategoryId = 4,
                             Content = "Geleceğin eğitim sistemleri nasıl olacak?",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8471),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4180),
                             Title = "Geleceğin Eğitimi",
                             UserId = 3,
                             ViewCount = 0
@@ -433,7 +435,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 6,
                             CategoryId = 3,
                             Content = "Yazılım geliştirme süreçlerindeki en büyük zorluklarımız.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8474),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4183),
                             Title = "Yazılım Geliştirme Zorlukları",
                             UserId = 1,
                             ViewCount = 0
@@ -443,7 +445,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 7,
                             CategoryId = 5,
                             Content = "Sağlık sektöründe yapay zeka kullanımı üzerine düşünceler.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8475),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4185),
                             Title = "Yapay Zeka ve Sağlık",
                             UserId = 3,
                             ViewCount = 0
@@ -453,7 +455,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 8,
                             CategoryId = 6,
                             Content = "Geleceğin seyahat trendleri ve tahminlerimiz.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8477),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4186),
                             Title = "Geleceğin Seyahatleri",
                             UserId = 2,
                             ViewCount = 0
@@ -463,7 +465,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 9,
                             CategoryId = 4,
                             Content = "Sanal gerçeklik teknolojilerinin eğitimdeki potansiyeli.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8478),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4217),
                             Title = "Sanal Gerçeklik ve Eğitim",
                             UserId = 1,
                             ViewCount = 0
@@ -473,7 +475,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 10,
                             CategoryId = 7,
                             Content = "Girişimcilikte en önemli başarı faktörleri nelerdir?",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8481),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4219),
                             Title = "Girişimcilik Başarı Faktörleri",
                             UserId = 2,
                             ViewCount = 0
@@ -483,7 +485,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 11,
                             CategoryId = 8,
                             Content = "Sosyal medyanın geleceği ve değişen dinamikler.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8482),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4221),
                             Title = "Sosyal Medyanın Geleceği",
                             UserId = 3,
                             ViewCount = 0
@@ -493,7 +495,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 12,
                             CategoryId = 5,
                             Content = "Yapay zeka ve otomasyonun endüstriyel etkileri üzerine bir değerlendirme.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8483),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4223),
                             Title = "Yapay Zeka ve Endüstri",
                             UserId = 1,
                             ViewCount = 0
@@ -503,7 +505,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 13,
                             CategoryId = 9,
                             Content = "Çevresel sürdürülebilirlik ve iş dünyasındaki rolü.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8485),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4224),
                             Title = "Çevresel Sürdürülebilirlik",
                             UserId = 2,
                             ViewCount = 0
@@ -513,7 +515,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 14,
                             CategoryId = 10,
                             Content = "Blockchain teknolojisinin finans sektöründeki yenilikçi kullanımları.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8486),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4226),
                             Title = "Blockchain ve Finans",
                             UserId = 3,
                             ViewCount = 0
@@ -523,7 +525,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 15,
                             CategoryId = 11,
                             Content = "E-ticaretin geleceği ve değişen tüketici alışkanlıkları.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8487),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4228),
                             Title = "E-ticaretin Geleceği",
                             UserId = 1,
                             ViewCount = 0
@@ -533,7 +535,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 16,
                             CategoryId = 12,
                             Content = "Yeni nesil mobil uygulama geliştirme trendleri üzerine düşünceler.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8488),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4229),
                             Title = "Mobil Uygulama Trendleri",
                             UserId = 2,
                             ViewCount = 0
@@ -543,7 +545,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 17,
                             CategoryId = 5,
                             Content = "Yapay zeka ve günlük yaşam üzerindeki etkileri.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8490),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4232),
                             Title = "Yapay Zeka ve Günlük Hayat",
                             UserId = 3,
                             ViewCount = 0
@@ -553,7 +555,7 @@ namespace Blog_Sitesi.Migrations
                             PostId = 18,
                             CategoryId = 9,
                             Content = "Geleceğin enerji ihtiyaçları ve sürdürülebilir enerji çözümleri.",
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 774, DateTimeKind.Local).AddTicks(8492),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 128, DateTimeKind.Local).AddTicks(4234),
                             Title = "Geleceğin Enerji İhtiyaçları",
                             UserId = 1,
                             ViewCount = 0
@@ -848,11 +850,6 @@ namespace Blog_Sitesi.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("PeriodStart");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("nvarchar(6)");
-
                     b.HasKey("UserId");
 
                     b.ToTable("Users", (string)null);
@@ -872,92 +869,82 @@ namespace Blog_Sitesi.Migrations
                         new
                         {
                             UserId = 1,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2259),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4472),
                             Email = "ahmet@gmail.com",
                             Name = "Ahmet",
-                            Password = "123",
-                            Role = "admin"
+                            Password = "123"
                         },
                         new
                         {
                             UserId = 2,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2273),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4479),
                             Email = "mehmet@gmail.com",
                             Name = "Mehmet",
-                            Password = "456",
-                            Role = "user"
+                            Password = "456"
                         },
                         new
                         {
                             UserId = 3,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2275),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4481),
                             Email = "ayse@gmail.com",
                             Name = "Ayşe",
-                            Password = "789",
-                            Role = "user"
+                            Password = "789"
                         },
                         new
                         {
                             UserId = 4,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2276),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4482),
                             Email = "fatma@gmail.com",
                             Name = "Fatma",
-                            Password = "abc",
-                            Role = "user"
+                            Password = "abc"
                         },
                         new
                         {
                             UserId = 5,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2278),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4483),
                             Email = "mustafa@gmail.com",
                             Name = "Mustafa",
-                            Password = "def",
-                            Role = "user"
+                            Password = "def"
                         },
                         new
                         {
                             UserId = 6,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2282),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4487),
                             Email = "zeynep@gmail.com",
                             Name = "Zeynep",
-                            Password = "ghi",
-                            Role = "user"
+                            Password = "ghi"
                         },
                         new
                         {
                             UserId = 7,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2283),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4488),
                             Email = "ali@gmail.com",
                             Name = "Ali",
-                            Password = "jkl",
-                            Role = "user"
+                            Password = "jkl"
                         },
                         new
                         {
                             UserId = 8,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2284),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4489),
                             Email = "aysel@gmail.com",
                             Name = "Aysel",
-                            Password = "mno",
-                            Role = "user"
+                            Password = "mno"
                         },
                         new
                         {
                             UserId = 9,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2285),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4490),
                             Email = "ismail@gmail.com",
                             Name = "İsmail",
-                            Password = "pqr",
-                            Role = "user"
+                            Password = "pqr"
                         },
                         new
                         {
                             UserId = 10,
-                            CreatedAt = new DateTime(2024, 7, 13, 20, 45, 0, 781, DateTimeKind.Local).AddTicks(2288),
+                            CreatedAt = new DateTime(2024, 7, 23, 9, 17, 49, 129, DateTimeKind.Local).AddTicks(4492),
                             Email = "hulya@gmail.com",
                             Name = "Hülya",
-                            Password = "stu",
-                            Role = "user"
+                            Password = "stu"
                         });
                 });
 

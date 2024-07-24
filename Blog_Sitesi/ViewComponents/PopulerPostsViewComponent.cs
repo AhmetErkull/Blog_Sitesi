@@ -13,14 +13,15 @@ namespace Blog_Sitesi.ViewComponents
             this.context = context;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var posts = context.Posts.OrderByDescending(x => x.ViewCount).Take(3).Include(x => x.Images).Select(x => new PostsWithImageViewModel()
+            var posts = await context.Posts.OrderByDescending(x => x.ViewCount).Take(3).Include(x => x.Images).Select(x => new PostsWithImageViewModel()
             {
+                Id = x.PostId,
                 Title = x.Title,
                 ImageUrl = x.Images.FirstOrDefault().Url.ToString(),
                 CreatedAt = x.CreatedAt
-            }).ToList();
+            }).ToListAsync();
             return View("Components/PopulerPostsComponent.cshtml", posts);
         }
     }

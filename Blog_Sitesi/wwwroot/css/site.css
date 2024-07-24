@@ -47,3 +47,54 @@ body {
     left: 0;
 }
 
+
+.tag {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.tag.selected {
+    background-color: green;
+    color: white;
+}
+/* Basic PagedList styling */
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+        .pagination li a,
+        .pagination li span {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+        }
+
+            .pagination li a:hover {
+                color: #0056b3;
+                text-decoration: none;
+                background-color: #e9ecef;
+                border-color: #dee2e6;
+            }
+
+        .pagination li.active span {
+            z-index: 1;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            cursor: default;
+        }

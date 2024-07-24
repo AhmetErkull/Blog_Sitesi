@@ -1,0 +1,53 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<Comment>
+
+<div class="table-responsive" style="margin-bottom: 20px;">
+    <h1>@ViewBag.Title</h1>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var comment in Model)
+            {
+              
+                <tr>
+                    <td>
+
+                            @comment.Content
+
+                    </td>
+                    <td>
+
+                        @comment.CreatedAt
+
+                    </td>
+                    <td>
+
+                        @comment.User.Name
+
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-action="CommentDelete" asp-route-postid="@comment.PostId" asp-route-commentid="@comment.CommentId">Delete</a>
+                    </td>
+
+
+                </tr>
+              
+            }
+        </tbody>
+        
+    </table>
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            @Html.PagedListPager((IPagedList)Model, _page => Url.Action("CommentList", "Comment", new { area = "Admin", page = _page }))
+        </div>
+    </div>
+    @Html.ActionLink("Postlar Sayfasına Dön", "PostList", new { page = TempData["PostPage"] })
+</div>

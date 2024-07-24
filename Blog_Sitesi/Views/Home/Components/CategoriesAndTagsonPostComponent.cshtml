@@ -1,0 +1,21 @@
+﻿@model PostWithCategoriesAndTagsViewModel
+
+<style>
+    .categories-tags a {
+        text-decoration: none;
+    }
+</style>
+
+<div class="categories-tags pt-4">
+    <p class="mb-1">
+        <strong>Kategori:</strong>
+        <a href="@Url.Action("PostsByCategory", "Home", new { categoryname = Model.CategoryName })" class="badge bg-primary text-light">@Model.CategoryName</a>
+    </p>
+    <p>
+        <strong>Etiketler:</strong>
+        @foreach (var tagname in Model.TagNames)
+        {
+            <a href="@Url.Action("PostsByTag", "Home", new { tagname = tagname })" class="badge bg-info text-dark">#@tagname</a>
+        }
+    </p>
+</div>

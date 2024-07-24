@@ -11,6 +11,7 @@ namespace Blog_Sitesi.Configurations
 			builder.Property(post => post.CreatedAt).HasDefaultValueSql("GETDATE()");
 			builder.Property(post => post.Title).HasMaxLength(100);
 			builder.Property(post => post.ViewCount).HasDefaultValue(0);
+			builder.HasAlternateKey(post => post.Title);
 
 			builder.HasOne(post => post.Category).WithMany(category=>category.Posts).HasForeignKey(post => post.CategoryId);
 

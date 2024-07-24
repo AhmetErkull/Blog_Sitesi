@@ -7,6 +7,6 @@
 
 
 
-        public ICollection<PostTag> Posts { get; set; }
+        public ICollection<PostTag> Posts { get; set; } =  new List<PostTag>();
     }
 }

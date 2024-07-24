@@ -9,7 +9,7 @@
 
                 <img src="@item.ImageUrl" class="me-3 rounded" alt="Image placeholder" width="64" height="64">
                 <div>
-                    <h6><a href="#" class="text-decoration-none text-dark">@item.Title</a></h6>
+                    <h6><a href="@Url.Action("PostSingle","Home",new{item.Id})" class="text-decoration-none text-dark">@item.Title</a></h6>
                     <small class="text-muted">@item.CreatedAt</small>
                 </div>
             </li>

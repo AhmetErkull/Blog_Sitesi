@@ -12,12 +12,12 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <a href="single.html" class="text-decoration-none text-dark">@item.Title</a>
+                        <a href="@Url.Action("PostSingle","Home",new{@item.Id})" class="text-decoration-none text-dark">@item.Title</a>
                     </h5>
                     <p class="card-text">
-                        @if (item.Content.Length > 30)
+                        @if (item.Content.Length > 50)
                         {
-                            @string.Concat(item.Content.Substring(0, 30), "...")
+                            @string.Concat(item.Content.Substring(0, 50), "...")
                         }
                         else
                         {
@@ -30,13 +30,14 @@
                             &bullet;
                             @foreach (var tagname in item.TagNames)
                             {
-                                <a href="#" class="text-decoration-none text-primary">@tagname &nbsp;</a>
+                                <a href="@Url.Action("PostsByTag","Home",new{tagname})" class="text-decoration-none text-primary">@tagname &nbsp;</a>
                             }
                         </small>
                     </p>
-                    <a href="single.html" class="btn btn-outline-primary btn-sm">Fazlasını Gör</a>
-                </div>
+                    <a href ="@Url.Action("PostSingle", "Home", new { @item.Id })" class="btn btn-outline-primary btn-sm">Fazlasını Gör</a>
+              
             </div>
         </div>
     </div>
+     </div>
 }

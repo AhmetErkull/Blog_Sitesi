@@ -1,0 +1,70 @@
+﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-action="Index" asp-controller="Home" asp-area="Admin">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="bi bi-emoji-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">AHMET ERKUL BLOG  <sup>ADMİN</sup></div>
+    </a>
+
+    <hr class="sidebar-divider my-0">
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" asp-action="PostList" , asp-controller="Post" asp-area="Admin">
+            <i class="bi bi-file-post"></i>
+            <span>Posts</span>
+        </a>
+    </li>
+
+
+    <hr class="sidebar-divider my-0">
+
+
+    <li class="nav-item">
+        <a class="nav-link" asp-action="CategoryList" , asp-controller="Category" asp-area="Admin">
+            <i class="bi bi-book-half"></i>
+            <span>Categories</span>
+        </a>
+
+    </li>
+
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item">
+        <a class="nav-link" asp-action="TagList" , asp-controller="Tag" asp-area="Admin">
+            <i class="bi bi-hash"></i>
+            <span>Tags</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item">
+        <a class="nav-link" asp-action="PostList" asp-controller="Comment" asp-area="Admin">
+            <i class="bi bi-chat"></i>
+            <span>Comments</span>
+        </a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item">
+        <a class="nav-link" asp-action="UserList" asp-controller="User" asp-area="Admin">
+            <i class="bi bi-chat"></i>
+            <span>Users</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider my-1">
+
+    <li class="nav-item mt-auto">
+        <a class="nav-link" asp-action="LogOut" asp-controller="Home" asp-area="Admin">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+
+
+
+</ul>

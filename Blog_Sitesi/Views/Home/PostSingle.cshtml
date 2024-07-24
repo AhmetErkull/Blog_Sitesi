@@ -1,0 +1,37 @@
+﻿@model PostDetailsViewModel
+
+<section class="section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="h1">@Model.Title</h1>
+                <div class="post-content mb-5">
+                    @if (!string.IsNullOrEmpty(Model.Content))
+                    {
+                       @Model.Content
+                    }
+
+                    @if (Model.ImageUrls != null && Model.ImageUrls.Any())
+                    {
+                        <div class="row my-4">
+                            @foreach (var item in Model.ImageUrls)
+                            {
+                                <div class="col-12 mb-4">
+                                    <img src="@item" class="img-fluid rounded shadow-sm" alt="Post Image">
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+
+                @await Component.InvokeAsync("CategoriesAndTagsonPost",new{postid = Model.Id})
+
+                @await Component.InvokeAsync("Comments",new{ postid = Model.Id})
+
+                @await Component.InvokeAsync("LeaveComment", new { postid = Model.Id })
+                
+               
+            </div>
+        </div>
+    </div>
+</section>

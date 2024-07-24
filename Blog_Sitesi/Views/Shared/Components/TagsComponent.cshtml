@@ -5,7 +5,7 @@
     <div>
         @foreach (var item in Model)
         {
-            <a href="#" class="btn btn-outline-secondary btn-sm me-1 mb-1">@item.TagName</a>
+            <a href="@Url.Action("PostsByTag","Home",new{item.TagName})" class="btn btn-outline-secondary btn-sm me-1 mb-1">@item.TagName</a>
         }
     </div>
 </div>

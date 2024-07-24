@@ -1,0 +1,39 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<Tag>
+
+
+<div class="table-responsive" style="margin-bottom: 20px;">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">TagName</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TagName</td>
+                   
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Actions">
+                            <a class="btn btn-outline-primary" asp-action="TagEdit" asp-route-id="@item.TagId">Edit</a>
+                            <a class="btn btn-outline-danger" asp-action="TagDelete" asp-route-id="@item.TagId">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            @Html.PagedListPager((IPagedList)Model, _page => Url.Action("TagList", "Tag", new { area = "Admin", page = _page }))
+        </div>
+        <div>
+            <a class="btn btn-outline-success" asp-action="TagCreate">Create New</a>
+        </div>
+    </div>
+</div>
+

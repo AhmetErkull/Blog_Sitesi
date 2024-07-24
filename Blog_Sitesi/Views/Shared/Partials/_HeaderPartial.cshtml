@@ -1,7 +1,7 @@
 ﻿<header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
         <div style="background-color:#3E5699;" class="container">
-            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home" asp-area="">
                 <span class="text-light">Ahmet Erkul Blog</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,10 +10,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="text-light nav-link active" asp-controller="Home" asp-action="Index" aria-current="page">Ana Sayfa</a>
+                        <a class="text-light nav-link active" asp-controller="Home" asp-action="Index" asp-area="" aria-current="page">Ana Sayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-light nav-link" asp-controller="Home" asp-action="About">Hakkımda</a>
+                        <a class="text-light nav-link" asp-controller="Home" asp-area="" asp-action="About">Hakkımda</a>
                     </li>
                 </ul>
             </div>

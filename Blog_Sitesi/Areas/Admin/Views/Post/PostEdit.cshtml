@@ -1,0 +1,92 @@
+﻿@model Post
+
+<link href="~/css/site.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 offset-md-1">
+            <form asp-action="PostEdit" method="post">
+                <input asp-for="PostId" type="hidden" />
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Content" class="control-label"></label>
+                    <textarea asp-for="Content" class="form-control" rows="8"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Category Name </label>
+                    <select asp-for="CategoryId" class="control-label" asp-items="@(new SelectList(ViewBag.Categories,"Value","Text",Model.CategoryId))"></select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Images" class="control-label"></label>
+                    <textarea name="Images" class="form-control" rows="8">
+                        @foreach (var imageUrl in Model.Images.Select(x=>x.Url))
+                        {
+                            <text>@imageUrl &#10;</text>
+                        }
+    </textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-9 offset-md-1">
+                        <h4>Tags</h4>
+                        <div id="tags-container">
+                            @foreach (Tag tag in ViewBag.Tags)
+                            {
+                                var isSelected = Model.Tags.Any(pt => pt.TagId == tag.TagId) ? "selected" : "";
+                                <span class="tag @isSelected" data-id="@tag.TagId">@tag.TagName</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+                <input type="hidden" name="SelectedTags" id="SelectedTags" />
+            </form>
+        </div>
+    </div>
+   
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+   
+
+}
+
+<script>
+    $(document).ready(function () {
+        var selectedTags = [];
+
+        $('.tag.selected').each(function () {
+            var tagId = $(this).data('id');
+            selectedTags.push(tagId);
+            $(this).css('background-color', 'green');
+        });
+
+        $('.tag').click(function () {
+            var tagId = $(this).data('id');
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected').css('background-color', '');
+                selectedTags = selectedTags.filter(id => id !== tagId);
+            } else {
+                $(this).addClass('selected').css('background-color', 'green');
+                selectedTags.push(tagId);
+            }
+            $('#SelectedTags').val(selectedTags.join(','));
+        });
+    });
+</script>
+
+
+

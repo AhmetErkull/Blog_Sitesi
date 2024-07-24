@@ -1,0 +1,15 @@
+﻿@model CommentsOfPostViewModel
+<div class="comment-form pt-5">
+    <h3 class="mb-4">Leave a comment</h3>
+    <form asp-action="LeaveComment" asp-controller="Home" asp-area="" method="post" class="bg-light p-4 rounded shadow-sm">
+        <input type="hidden" asp-for="PostId" />
+
+        <div class="form-group">
+            <label asp-for="Content" class="form-label">Mesaj</label>
+            <textarea asp-for="Content" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gönder</button>
+    </form>
+</div>

@@ -8,11 +8,6 @@ namespace Blog_Sitesi.Configurations
 	{
 		void IEntityTypeConfiguration<Tag>.Configure(EntityTypeBuilder<Tag> builder)
 		{
-
-
-
-
-
 			// veri ekleme
 
 			builder.HasData(new List<Tag>()
