@@ -65,14 +65,20 @@ namespace Blog_Sitesi.Controllers
                 TagNames = p.Tags
                     .Select(pt => pt.Tag.TagName)
                     .ToList()
-            })
-            .AsNoTrackingWithIdentityResolution()
+
+            }).AsNoTrackingWithIdentityResolution()
             .FirstOrDefaultAsync();
 
             if (post == null)
             {
                 return NotFound();
             }
+
+            var postcount = await context.Posts.FindAsync(id);
+            postcount.ViewCount++;
+            await context.SaveChangesAsync();
+
+          
 
             return View(post);
 
